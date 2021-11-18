@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "../card/card";
 import styles from "./list.module.css";
+import pokemon_title from "../../img/pokemon_title.png";
 
 const List = (props) => {
   const [pokemons, setPokemons] = useState([]);
@@ -19,7 +20,8 @@ const List = (props) => {
 
   return (
     <div className={styles.list}>
-      <h1 className={styles.list_title}>Pokemon</h1>
+      {/* <h1 className={styles.list_title}>Pokemon</h1> */}
+      <img src={pokemon_title} alt="title" />
       {pokemons.map((pokemon) => (
         <Card pokemon={pokemon} />
       ))}

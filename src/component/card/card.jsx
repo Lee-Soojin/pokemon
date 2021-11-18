@@ -49,7 +49,7 @@ const Card = ({ pokemon }) => {
       />
       <ul className={styles.card_name} onClick={handleClick}>
         <li className={styles.card_list}>
-          <p className={styles.id}>id #{id}</p>
+          <p className={styles.id}>ID #{id}</p>
           <p className={styles.card__pokemon_name}>{name}</p>
         </li>
       </ul>

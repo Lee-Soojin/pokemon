@@ -13,7 +13,7 @@
 }
 
 .card > img {
-  width: 30%;
+  width: 6rem;
   height: auto;
 }
 
@@ -42,6 +42,11 @@
 
 .card_name > li > p {
   height: 1rem;
+}
+
+.id {
+  color: blueviolet;
+  font-weight: 600;
 }
 
 .card_list {
