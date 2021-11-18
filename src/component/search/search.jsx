@@ -27,7 +27,7 @@ const Search = (props) => {
     setId(result["id"]);
     setHeight(result["height"]);
     setWeight(result["weight"]);
-    setAbillities(result["abillities"]);
+
     setExperience(result["base_experience"]);
     setName(result["name"]);
     setShow(true);
@@ -87,7 +87,6 @@ const Search = (props) => {
           weight={weight}
           experience={experience}
           name={name}
-          abillities={abillities}
           onClick={onClick}
         />
       </div>

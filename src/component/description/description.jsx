@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import styles from "./description.module.css";
 
-const Description = ({
-  name,
-  id,
-  height,
-  weight,
-  abillities,
-  experience,
-  onClick,
-}) => {
+const Description = ({ name, id, height, weight, experience, onClick }) => {
   return (
     <div className={styles.description}>
       <img
@@ -22,11 +14,6 @@ const Description = ({
         <p className={styles.desc__height}>Height: {height}</p>
         <p className={styles.desc__weight}>Weight: {weight}</p>
         <p className={styles.desc__experience}>Experience: {experience}</p>
-        <p>Abtillites</p>
-        {abillities &&
-          Object.keys(abillities).map((ab) => (
-            <p className={styles.desc__abillity}>Abillity: {ab.abillity}</p>
-          ))}
       </div>
 
       <button onClick={onClick}>❌close❌</button>

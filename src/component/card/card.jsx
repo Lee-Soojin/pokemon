@@ -7,7 +7,7 @@ const Card = ({ pokemon }) => {
   const [id, setId] = useState(0);
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
-  const [abillities, setAbillities] = useState([]);
+
   const [experience, setExperience] = useState("");
   const [show, setShow] = useState(false);
   const name = pokemon.name;
@@ -25,7 +25,6 @@ const Card = ({ pokemon }) => {
           setId(result["id"]),
           setHeight(result["height"]),
           setWeight(result["weight"]),
-          setAbillities(result["abillities"]),
           setExperience(result["base_experience"])
         )
       );
@@ -64,7 +63,6 @@ const Card = ({ pokemon }) => {
           weight={weight}
           experience={experience}
           name={name}
-          abillities={abillities}
           onClick={onClick}
         />
       </div>
