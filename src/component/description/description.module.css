@@ -1,0 +1,48 @@
+.description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 100;
+  position: fixed;
+  top: 40%;
+  right: 35%;
+  background-color: white;
+  width: 30rem;
+  height: 20rem;
+  color: black;
+  box-shadow: 4px 4px 8px black;
+}
+
+.description > div {
+  display: grid;
+  grid-template-columns: repeat(2, 7rem);
+  grid-template-rows: repeat(3, 6rem);
+}
+
+.description > img {
+  width: 7rem;
+  height: auto;
+}
+
+.description > p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.description > button {
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 42%;
+  bottom: 1rem;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 1px 1px 2px gray;
+  cursor: pointer;
+}

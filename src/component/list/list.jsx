@@ -19,10 +19,10 @@ const List = (props) => {
 
   return (
     <div className={styles.list}>
-      <h1>List</h1>
-      {pokemons.map((pokemon) => {
-        <Card pokemon={pokemon} />;
-      })}
+      <h1 className={styles.list_title}>Pokemon</h1>
+      {pokemons.map((pokemon) => (
+        <Card pokemon={pokemon} />
+      ))}
     </div>
   );
 };
