@@ -1,34 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import Description from "../description/description";
 import styles from "./card.module.css";
 
-const Card = ({ pokemon }) => {
-  const [description, setDescription] = useState({});
-  const [id, setId] = useState(0);
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
-
-  const [experience, setExperience] = useState("");
+const Card = memo(({ item, pokemon }) => {
+  const [character, setCharacter] = useState();
   const [show, setShow] = useState(false);
-  const name = pokemon.name;
+  const name = item.name;
 
   useEffect(() => {
-    const requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
-    fetch(`https://pokeapi.co/api/v2/pokemon/${name}`, requestOptions)
-      .then((response) => response.json())
-      .then(
-        (result) => (
-          setId(result["id"]),
-          setHeight(result["height"]),
-          setWeight(result["weight"]),
-          setExperience(result["base_experience"])
-        )
-      );
-  });
+    if (item) {
+      pokemon
+        .search(name) //
+        .then((res) => {
+          setCharacter(res);
+        });
+    } else {
+      return;
+    }
+  }, [pokemon, character]);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -48,7 +37,6 @@ const Card = ({ pokemon }) => {
       />
       <ul className={styles.card_name} onClick={handleClick}>
         <li className={styles.card_list}>
-          <p className={styles.id}>ID #{id}</p>
           <p className={styles.card__pokemon_name}>{name}</p>
         </li>
       </ul>
@@ -57,17 +45,20 @@ const Card = ({ pokemon }) => {
           show ? styles.visible : styles.invisible
         }`}
       >
-        <Description
-          id={id}
-          height={height}
-          weight={weight}
-          experience={experience}
-          name={name}
-          onClick={onClick}
-        />
+        {character && (
+          <Description
+            name={name}
+            onClick={onClick}
+            abilities={character["abilities"]}
+            height={character["height"]}
+            weight={character["weight"]}
+            stats={character["stats"]}
+            types={character["types"]}
+          />
+        )}
       </div>
     </div>
   );
-};
+});
 
 export default Card;
