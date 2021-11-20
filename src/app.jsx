@@ -1,11 +1,11 @@
 import { useState, useCallback, useEffect } from "react";
 import "./app.css";
 import List from "./component/list/list";
-import Page from "./component/page";
+import Page from "./pagination/page";
 import Search from "./component/search/search";
+import pokemon_title from "./img/pokemon_title.png";
 
 function App({ pokemon }) {
-  const [result, setResult] = useState();
   const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
 

@@ -1,29 +1,83 @@
+@font-face {
+  font-family: "NEXON Lv1 Gothic OTF";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-family: "NEXON Lv1 Gothic OTF";
+}
+
 .description {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   z-index: 100;
   position: fixed;
-  top: 40%;
-  right: 35%;
+  top: 35%;
+  right: 33%;
   background-color: white;
-  width: 30rem;
-  height: 20rem;
+  width: 36rem;
+  height: 30rem;
   color: black;
-  box-shadow: 4px 4px 8px black;
+  box-shadow: 4px 4px 10px gray;
+  background: url(../../img/description_bg.jpg);
+  font-family: var(--font-family);
 }
 
-.description > div {
+.description__desc_container {
   display: grid;
-  grid-template-columns: repeat(2, 7rem);
-  grid-template-rows: repeat(3, 6rem);
+  grid-template-columns: repeat(1, 18rem);
+  grid-template-rows: repeat(4, 3rem);
+  width: 100%;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
 }
 
-.description > img {
-  width: 7rem;
+.description__desc_container > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.desc_ability,
+.desc_types {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.2rem;
+}
+
+.desc__title {
+  display: flex;
+  width: 5rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: black;
+  margin-right: 1rem;
+  border-radius: 4px;
+}
+
+.description__img_container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.description__img_container > img {
+  width: 10rem;
   height: auto;
+  margin: 0 1rem;
+  border-radius: 50%;
 }
 
 .description > p {
@@ -39,10 +93,19 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 42%;
+  top: 0;
+  right: 0.5rem;
   bottom: 1rem;
-  background-color: white;
-  border: 1px solid black;
-  box-shadow: 1px 1px 2px gray;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
   cursor: pointer;
+  transition: all ease;
+}
+
+.description > button:hover {
+  transform: scale(1.1);
+  color: rgb(255, 13, 53);
 }

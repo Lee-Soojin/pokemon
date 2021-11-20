@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import Description from "../description/description";
 import styles from "./search.module.css";
+import pokemon_title from "../../img/pokemon_title.png";
+import { FaSearch } from "react-icons/fa";
 
 const Search = ({ pokemon }) => {
   const inputRef = useRef();
@@ -35,23 +37,26 @@ const Search = ({ pokemon }) => {
 
   return (
     <div className={styles.search}>
-      <p className={styles.title}> Search </p>
-      <form className={styles.search__form}>
-        <input
-          type="search"
-          ref={inputRef}
-          className={styles.search__input}
-          placeholder="write id or name of pokemon"
-          onKeyPress={handleKeyPress}
-        />
-      </form>
-      <button
-        className={styles.search__button}
-        type="submit"
-        onClick={handleClick}
-      >
-        🔍
-      </button>
+      <img src={pokemon_title} alt="title" className={styles.search__title} />
+      <div className={styles.search__form}>
+        <form>
+          <input
+            type="search"
+            ref={inputRef}
+            className={styles.search__input}
+            placeholder="write id or name of pokemon"
+            onKeyPress={handleKeyPress}
+          />
+        </form>
+        <button
+          className={styles.search__button}
+          type="submit"
+          onClick={handleClick}
+        >
+          <FaSearch />
+        </button>
+      </div>
+
       <div
         className={`${styles.description_container} ${
           show ? styles.visible : styles.invisible
