@@ -9,15 +9,6 @@ function App({ pokemon }) {
   const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
 
-  const onSearch = useCallback(
-    (id) => {
-      pokemon
-        .search(id) //
-        .then((res) => setResult(res));
-    },
-    [pokemon]
-  );
-
   useEffect(() => {
     pokemon
       .showList(0) //
@@ -33,7 +24,7 @@ function App({ pokemon }) {
 
   return (
     <div className="app">
-      <Search onSearch={onSearch} />
+      <Search pokemon={pokemon} />
       <List list={list} pokemon={pokemon} />
       <Page onChange={handleChange} />
     </div>

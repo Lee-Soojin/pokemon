@@ -2,13 +2,16 @@ import React, { useRef, useState } from "react";
 import Description from "../description/description";
 import styles from "./search.module.css";
 
-const Search = ({ onSearch }) => {
+const Search = ({ pokemon }) => {
   const inputRef = useRef();
   const [show, setShow] = useState(false);
+  const [character, setCharacter] = useState();
 
   const handleSearch = () => {
     const value = inputRef.current.value;
-    onSearch(value);
+    pokemon
+      .search(value) //
+      .then((res) => setCharacter(res));
     setShow(true);
   };
 
@@ -28,6 +31,7 @@ const Search = ({ onSearch }) => {
     e.preventDefault();
     setShow(false);
   };
+  character && console.log(character);
 
   return (
     <div className={styles.search}>
@@ -53,14 +57,17 @@ const Search = ({ onSearch }) => {
           show ? styles.visible : styles.invisible
         }`}
       >
-        <Description
-          // id={id}
-          // height={height}
-          // weight={weight}
-          // experience={experience}
-          // name={name}
-          onClick={onClick}
-        />
+        {character && (
+          <Description
+            abilities={character["abilities"]}
+            height={character["height"]}
+            weight={character["weight"]}
+            name={character["name"]}
+            stats={character["stats"]}
+            types={character["types"]}
+            onClick={onClick}
+          />
+        )}
       </div>
     </div>
   );

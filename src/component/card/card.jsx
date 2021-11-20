@@ -10,7 +10,7 @@ const Card = memo(({ item, pokemon }) => {
   useEffect(() => {
     if (item) {
       pokemon
-        .search(name) //
+        .getData(name) //
         .then((res) => {
           setCharacter(res);
         });
