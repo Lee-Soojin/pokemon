@@ -8,6 +8,15 @@
 
 :root {
   --font-family: "NEXON Lv1 Gothic OTF";
+  --description-box-shadow: 4px 4px 10px gray;
+  --stat-bar-box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px white;
+  --stat-value-box-shadow: 2px 0px 3px rgb(163, 162, 162);
+  --stat-value-1-bg-color: #fc5c65;
+  --stat-value-2-bg-color: #fd9644;
+  --stat-value-3-bg-color: #fed330;
+  --stat-value-4-bg-color: #26de81;
+  --stat-value-5-bg-color: #2bcbba;
+  --stat-value-6-bg-color: #a65eea;
 }
 
 .description {
@@ -24,24 +33,45 @@
   width: 36rem;
   height: 30rem;
   color: black;
-  box-shadow: 4px 4px 10px gray;
+  box-shadow: var(--description-box-shadow);
   background: url(../../img/description_bg.jpg);
   font-family: var(--font-family);
+  cursor: default;
+}
+
+.desc__name {
+  display: flex;
+  margin: 0.3rem 0;
+  font-weight: 700;
 }
 
 .description__desc_container {
-  display: grid;
-  grid-template-columns: repeat(1, 18rem);
-  grid-template-rows: repeat(4, 3rem);
+  display: flex;
+  flex-direction: row;
   width: 100%;
   height: 50%;
   align-items: center;
   justify-content: center;
 }
 
-.description__desc_container > div {
+.desc__container {
+  display: grid;
+  grid-template-columns: repeat(1, 20rem);
+  grid-template-rows: repeat(4, 3rem);
+  width: 40%;
+}
+
+.desc__container > div {
+  display: flex;
+  font-size: 0.8rem;
+}
+
+.desc_height,
+.desc_weight {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .desc_ability,
@@ -50,34 +80,36 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 0 0.2rem;
+  margin: 0 0.1rem;
 }
 
 .desc__title {
   display: flex;
-  width: 5rem;
+  width: 4rem;
   height: 1.5rem;
   align-items: center;
   justify-content: center;
+  font-size: 0.8rem;
   color: white;
   background: black;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   border-radius: 4px;
 }
 
 .description__img_container {
   display: flex;
-  width: 100%;
+  width: 10rem;
+  height: 10rem;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
 }
 
 .description__img_container > img {
-  width: 10rem;
-  height: auto;
-  margin: 0 1rem;
+  margin: 0.5rem 1rem;
   border-radius: 50%;
+  width: 100%;
+  height: 100%;
 }
 
 .description > p {
@@ -86,6 +118,77 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
+}
+
+.desc__stat_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.desc__stat {
+  display: flex;
+  width: 100%;
+  margin: 0.4rem auto;
+}
+
+.desc__stat_container > div:nth-child(1) > .stat_bar > .stat_value {
+  background-color: var(--stat-value-1-bg-color);
+  box-shadow: var(--stat-value-box-shadow);
+}
+
+.desc__stat_container > div:nth-child(2) > .stat_bar > .stat_value {
+  background-color: var(--stat-value-2-bg-color);
+}
+
+.desc__stat_container > div:nth-child(3) > .stat_bar > .stat_value {
+  background-color: var(--stat-value-3-bg-color);
+}
+
+.desc__stat_container > div:nth-child(4) > .stat_bar > .stat_value {
+  background-color: var(--stat-value-4-bg-color);
+}
+
+.desc__stat_container > div:nth-child(5) > .stat_bar > .stat_value {
+  background-color: var(--stat-value-5-bg-color);
+}
+
+.desc__stat_container > div:nth-child(6) > .stat_bar > .stat_value {
+  background-color: var(--stat-value-6-bg-color);
+}
+
+.stat_name {
+  display: flex;
+  font-size: 0.7rem;
+  margin-right: 0.5rem;
+  color: gray;
+}
+
+.stat_bar {
+  display: flex;
+  background-color: white;
+  box-shadow: var(--stat-bar-box-shadow);
+  width: 7rem;
+  height: 1rem;
+  border-radius: 8px;
+  margin: 0 0.5rem;
+}
+
+.stat_value {
+  display: flex;
+  background-color: pink;
+  z-index: 1;
+  height: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--stat-value-box-shadow);
+}
+
+.stat_base_stat {
+  font-size: 0.7rem;
+  color: darkgray;
 }
 
 .description > button {

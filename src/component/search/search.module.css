@@ -54,8 +54,10 @@
   border-radius: 50px;
   border: none;
   margin: 0.8rem 0.5rem;
+  padding-left: 0.8rem;
   width: 14rem;
-  height: 1.5rem;
+  height: 1.8rem;
+  font-size: 1rem;
   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
 

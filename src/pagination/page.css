@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   margin-top: 15px;
+  font-family: "NEXON Lv2 Gothic Bold";
 }
 ul {
   list-style: none;
@@ -16,6 +17,7 @@ ul.pagination li {
   justify-content: center;
   align-items: center;
   font-size: 1rem;
+  background-color: white;
 }
 ul.pagination li:first-child {
   border-radius: 5px 0 0 5px;
@@ -25,21 +27,21 @@ ul.pagination li:last-child {
 }
 ul.pagination li a {
   text-decoration: none;
-  color: #337ab7;
+  color: black;
   font-size: 1rem;
 }
 ul.pagination li.active a {
   color: white;
 }
 ul.pagination li.active {
-  background-color: rgb(63, 206, 158);
+  background-color: gold;
 }
 ul.pagination li a:hover,
 ul.pagination li a.active {
-  color: orange;
+  color: red;
 }
 .page-selection {
   width: 48px;
   height: 30px;
-  color: goldenrod;
+  color: red;
 }

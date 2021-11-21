@@ -37,7 +37,7 @@ const Card = memo(({ item, pokemon }) => {
       />
       <ul className={styles.card_name} onClick={handleClick}>
         <li className={styles.card_list}>
-          <p className={styles.card__pokemon_name}>{name}</p>
+          <p className={styles.card__pokemon_name}>{name.toUpperCase()}</p>
         </li>
       </ul>
       <div
