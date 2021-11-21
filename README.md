@@ -1,4 +1,6 @@
 ### 포켓몬 api 사용하기
-- 검색
-- 캐릭터 사진, description 불러오기 
-- pagination 구현 실패 
+- 포켓몬 검색
+- 포켓몬 사진, 설명 불러오기 
+- Pagination
+
+![image](https://user-images.githubusercontent.com/76468868/142750725-26f26d4a-bbfa-4e67-8f7a-5df9c020344f.png)
